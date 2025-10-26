@@ -1,4 +1,50 @@
-.header{
-    background-color: $grisOscuro;
-    padding: 1rem 0 3rem 0;
+// Si el navegador no soporta WebP, usar la imagen JPG como fondo
+.no-webp .inicio {
+    background-image: url('../img/header.jpg');
+}
+
+// Si el navegador soporta WebP, usar la imagen WebP como fondo
+.webp .inicio {
+    background-image: url('../img/header.webp');
+}
+
+// Estilos generales para el header
+.header {
+    background-color: $grisOscuro; // Color de fondo oscuro
+    padding: 1rem 0 3rem 0; // Espaciado superior, derecho, inferior e izquierdo
+
+    // Estilos adicionales cuando el header tiene la clase 'inicio'
+    &.inicio {
+        background-size: cover; // La imagen de fondo cubre todo el contenedor
+        background-position: center center; // La imagen se centra
+
+        @include tablet {
+            // Media query para tablets
+            min-height: 70rem; // Altura mínima de 70rem
+        }
+        .contenido-header {
+        @include tablet {
+            // Media query para tablets
+            min-height: 70rem; // Altura mínima de 70rem
+        }
+    }
+    }
+    
+}
+
+// Contenedor del contenido dentro del header
+.contenido-header {
+    display: flex; // Usar Flexbox
+    flex-direction: column; // Organizar elementos en columna
+    justify-content: space-between; // Separar elementos verticalmente
+
+    // Estilos para los títulos h1 dentro de contenido-header
+    h1 {
+        text-align: left; // Alinear texto a la izquierda
+        color: $blanco; // Color del texto blanco
+        font-size: 3.0rem;
+        font-weight: $bold; // Fuente en negrita
+        line-height: 2; // Altura de línea de 2
+        max-width: 50rem; // Ancho máximo del título
+    }
 }
