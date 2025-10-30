@@ -22,14 +22,15 @@
             // Media query para tablets
             min-height: 70rem; // Altura mínima de 70rem
         }
+
         .contenido-header {
-        @include tablet {
-            // Media query para tablets
-            min-height: 70rem; // Altura mínima de 70rem
+            @include tablet {
+                // Media query para tablets
+                min-height: 70rem; // Altura mínima de 70rem
+            }
         }
     }
-    }
-    
+
 }
 
 // Contenedor del contenido dentro del header
@@ -46,5 +47,8 @@
         font-weight: $bold; // Fuente en negrita
         line-height: 2; // Altura de línea de 2
         max-width: 50rem; // Ancho máximo del título
+        padding: 0 0 12rem 0;
+        border: 0;
+        margin: 0;
     }
 }
