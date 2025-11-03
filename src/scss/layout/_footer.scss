@@ -5,6 +5,8 @@
 
     .contenedor-footer{
         padding-top: calc($separacion / 2) ;
+        margin: 0;
+        left: 2rem;
     }
     a{
         color: $blanco;
@@ -15,6 +17,7 @@
     .copyright{
         color: $blanco;
         text-align: center;
+        margin: 0;
     }
   
 }
