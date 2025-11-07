@@ -1,0 +1,57 @@
+.formulario {
+
+    // Estilos para los párrafos dentro del formulario
+    p {
+        font-size: 1.4rem;        // Tamaño de fuente
+        color: $grisOscuro;       // Color gris oscuro definido en variables
+        margin: 2rem 0 0 0;       // Espacio superior para separar del contenido previo
+    }
+
+    // Estilos para el legend (título de un fieldset)
+    legend {
+        font-size: 2rem;          // Tamaño mayor para destacar el título del grupo
+        color: $grisOscuro;       // Color gris oscuro
+    }
+
+    // Estilos para las etiquetas de los campos
+    label {
+        font-weight: $bold;       // Texto en negrita
+        text-transform: uppercase; // Convierte el texto en mayúsculas
+        display: block;           // Cada label ocupa toda la línea
+        margin-top: 1rem;         // Espacio superior para separar de otros elementos
+    }
+
+    // Estilos generales para los inputs, textarea y select
+    // (excepto el botón de tipo submit)
+    input:not([type='submit']), 
+    textarea,
+    select {
+        padding: 1rem;            // Espaciado interno
+        display: block;           // Cada elemento en una nueva línea
+        width: 100%;              // Ocupan todo el ancho del contenedor
+        margin: 1rem 0 0 0;       // Margen superior
+        background-color: $blanco; // Fondo blanco
+        border: 1px solid $gris;  // Borde gris claro
+        border-radius: 1rem;      // Bordes redondeados para un estilo suave
+        margin-bottom: 2rem;      // Espacio inferior entre campos
+    }
+
+    // Altura específica para los campos de texto grandes
+    textarea {
+        height: 12rem;            // Altura fija para mantener consistencia visual
+    }
+
+    // Contenedor para opciones de contacto (por ejemplo, radio buttons)
+    .forma-contacto {
+        max-width: 30rem;         // Limita el ancho máximo del bloque
+        display: flex;            // Usa Flexbox para organizar los elementos
+        justify-content: space-between; // Distribuye los elementos con espacio entre ellos
+        align-items: center;      // Centra verticalmente los elementos
+
+        // Estilos específicos para los botones de tipo radio dentro del bloque
+        input[type='radio'] {
+            margin: 0;            // Elimina márgenes por defecto
+            width: auto;          // Evita que se estiren como los inputs de texto
+        }
+    }
+}
