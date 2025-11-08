@@ -1,0 +1,30 @@
+.dark-mode{
+    background-color: $grisOscuro;
+    p,h1,h2,h3,h4{
+        color: $blanco;
+    }
+    .anuncio{
+        background-color: $grisOscuro;
+        .precio{
+            color: $verde;
+        }
+        .icono{
+            filter: invert(100%);
+        }
+    }
+    blockquote{
+        color: $blanco;
+    }
+    .formulario{
+        color: $blanco;
+        p,legend{
+            color: $amarillo;
+        }
+    
+    }
+    
+        
+    
+}
+
+    

@@ -1,59 +1,90 @@
-.barra {
-    display: flex; // situa la navegacion junto al titulo
-    flex-direction: column;
-    align-items: center;
-    padding-top: 3rem;
+
+.derecha {
+    display: flex; /* Usa flexbox para organizar los elementos */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
 
     @include tablet {
-        flex-direction: row;
-        justify-content: space-between;
+        align-items: flex-end; /* En pantallas grandes, alinea a la derecha */
+    }
+
+    .dark-mode-boton {    
+        width: 3rem; /* Tamaño del botón de modo oscuro */
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        filter: invert(50%); /* Invierte parcialmente los colores (efecto gris) */
+
+        &:hover {
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            filter: invert(100%); /* Invierte completamente los colores (efecto blanco) */
+        }
+
+        @include tablet {
+            margin-top: 0; /* Elimina margen superior en pantallas grandes */
+        }
+    }
+}
+
+.barra {
+    display: flex; /* Coloca el título y la navegación en línea */
+    flex-direction: column; /* En móviles, apila los elementos en columna */
+    align-items: center; /* Centra el contenido */
+    padding-top: 3rem; /* Añade espacio superior */
+
+    @include tablet {
+        flex-direction: row; /* En pantallas grandes, coloca los elementos en fila */
+        justify-content: space-between; /* Separa el título y la navegación */
+        align-items: flex-end; /* Alinea verticalmente al final */
     }
 }
 
 .navegacion {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility .3s ease-in-out, opacity .5s linear;
+    visibility: hidden; /* Oculta la navegación por defecto */
+    opacity: 0; /* La hace transparente */
+    height: 0;
+    transition: visibility 1s ease-in-out, opacity .5s linear, height .2s linear; /* Transición suave al mostrarse */
 
     @include tablet {
-        display: flex;
-        align-items: center;
+        display: flex; /* En escritorio, muestra la navegación en línea */
+        align-items: center; /* Centra los enlaces verticalmente */
         margin-left: 2rem;
-        visibility: visible;
-        opacity: 1;
+        visibility: visible; /* Hace visible la navegación */
+        opacity: 1; /* Totalmente visible */
     }
 
     a {
-        color: $blanco;
-        text-decoration: none;
-        font-size: 1.4rem;
+        color: $blanco; /* Color del texto */
+        text-decoration: none; /* Quita el subrayado */
+        font-size: 1.4rem; /* Tamaño de texto para móviles */
         display: block;
         text-align: center;
 
         @include tablet {
-            margin-right: 2rem;
-            font-size: 1.8rem;
+            margin-right: 2rem; /* Espacio entre enlaces */
+            font-size: 1.8rem; /* Aumenta el tamaño en escritorio */
 
             &:last-of-type {
-                margin-right: 0;
+                margin-right: 0; /* El último enlace no tiene margen derecho */
             }
         }
     }
-
+    a:hover{
+        color: $amarillo;;
+    }
 }
 
-/** Menu de hamburguesa **/
 .mobile-menu {
     @include tablet {
-        display: none;
+        display: none; /* Se oculta en pantallas grandes */
     }
 
     img {
-        width: 5rem;
+        width: 5rem; /* Tamaño del icono del menú */
     }
 }
 
 .mostrar {
-    visibility: visible;
-    opacity: 1;
+    visibility: visible; /* Hace visible el menú oculto */
+    opacity: 1; /* Totalmente opaco (efecto vidible) */
+    height: auto;
 }
