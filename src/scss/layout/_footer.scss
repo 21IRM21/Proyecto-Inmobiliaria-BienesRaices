@@ -1,27 +1,35 @@
-.footer{
+.footer {
     padding: calc($separacion / 2) 0;
     background-color: $grisOscuro;
     margin-bottom: 0;
 
-    .contenedor-footer{
-        padding-top: calc($separacion / 2) ;
+    .contenedor-footer {
+        padding-top: calc($separacion / 2);
         margin: 0;
         left: 2rem;
     }
-    a{
+
+    a {
         color: $blanco;
         text-decoration: none;
         gap: 1rem;
     }
 
-    .copyright{
+    .copyright {
         color: $blanco;
         text-align: center;
-        margin: 0;
+        margin: 10rem 0 0;
     }
-    .navegacion{
+
+    .navegacion {
         visibility: visible;
         opacity: 1;
-    }
-  
+    } 
+
+    // Estilos específicos para tablet
+    @include tablet {       
+        .copyright {
+            margin: 2rem 0 0; // ajustamos solo el margin
+        }
+    } 
 }

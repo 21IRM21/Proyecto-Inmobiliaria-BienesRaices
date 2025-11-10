@@ -1,30 +1,46 @@
-.dark-mode{
+.dark-mode {
     background-color: $grisOscuro;
-    p,h1,h2,h3,h4{
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
         color: $blanco;
     }
-    .anuncio{
+
+    .anuncio,
+    .resumen-propiedad {
         background-color: $grisOscuro;
-        .precio{
+
+        .precio {
             color: $verde;
         }
-        .icono{
+
+        .icono {
             filter: invert(100%);
         }
     }
-    blockquote{
-        color: $blanco;
-    }
-    .formulario{
-        color: $blanco;
-        p,legend{
-            color: $amarillo;
-        }
-    
-    }
-    
-        
-    
-}
 
-    
+    blockquote {
+        color: $blanco;
+    }
+
+    .formulario {
+
+        label,
+        p,
+        legend {
+            color: $gris;
+        }
+
+        input:not([type='submit']),
+        textarea,
+        select {
+            background-color: $gris;
+            color: $black;
+            border: solid 1px solid $gris;
+        }
+    }
+
+}
