@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build/css/app.css">
-    <title>Bienes Raices</title>
-</head>
-
-<body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logotipo Bienes Raices">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="imagen menu responsive">
-                </div>
-
-                <div class="derecha">
-                    <img src="build/img/dark-mode.svg" alt="imagen dark-mode" class="dark-mode-boton">
-                    <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
-            </div> <!--cierre de la barra-->
-        </div>
-    </header>
+<?php @include 'includes/templates/header.php';?>
     <main class="contenedor seccion">
 
         <section class="contenedor-anuncios">
@@ -63,7 +30,7 @@
                         </li>
                     </ul>
 
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div><!--final contenido anuncio-->
             </div><!--final anuncio-->
 
@@ -94,7 +61,7 @@
                         </li>
                     </ul>
 
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div><!--final contenido anuncio-->
             </div><!--final anuncio-->
 
@@ -125,7 +92,7 @@
                         </li>
                     </ul>
 
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div><!--final contenido anuncio-->
             </div><!--final anuncio-->
 
@@ -156,7 +123,7 @@
                         </li>
                     </ul>
 
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div><!--final contenido anuncio-->
             </div><!--final anuncio-->
             <div class="anuncio">
@@ -186,7 +153,7 @@
                         </li>
                     </ul>
 
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div><!--final contenido anuncio-->
             </div><!--final anuncio-->
             <div class="anuncio">
@@ -216,24 +183,24 @@
                         </li>
                     </ul>
 
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div><!--final contenido anuncio-->
             </div><!--final anuncio-->
 
         </section><!--final contenedor-anuncios-->
 
         <div class="alinear-derecha">
-            <a href="anuncios.html" class="boton-verde">Ver Todas</a>
+            <a href="anuncios.php" class="boton-verde">Ver Todas</a>
         </div>
 
     </main>
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.php">Nosotros</a>
+                <a href="anuncios.php">Anuncios</a>
+                <a href="blog.php">Blog</a>
+                <a href="contacto.php">Contacto</a>
             </nav>
         </div>
         <p class="copyright">Iván Roldán Mora. Diseñador Web &copy;</p>

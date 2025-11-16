@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build/css/app.css">
-    <title>Bienes Raices</title>
-</head>
-
-<body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logotipo Bienes Raices">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="imagen menu responsive">
-                </div>
-
-                <div class="derecha">
-                    <img src="build/img/dark-mode.svg" alt="imagen dark-mode" class="dark-mode-boton">
-                    <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
-            </div> <!--cierre de la barra-->
-        </div>
-    </header>
+<?php @include 'includes/templates/header.php';?>
     <main class="contenedor seccion contenido-centrado">
 
         <section class="blog">
@@ -47,7 +14,7 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p class="informacion-meta">Escrito el: <span>30/10/2025</span> por: <span>admin</span></p>
                         <p>Consejos para construir una terraza en el techo de su casa con los mejores materiales
@@ -66,7 +33,7 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Consejos para tener una piscina en casa</h4>
                         <p class="informacion-meta">Escrito el: <span>30/10/2025</span> por <span>admin</span></p>
                         <p>Consejos para disfutar de la piscina en la terraza de su casa con los mejores materiales
@@ -84,7 +51,7 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Guía para la decoración de tu hogar</h4>
                         <p class="informacion-meta">Escrito el: <span>30/10/2025</span> por: <span>admin</span></p>
                         <p>Maximiza el espacio en tu hogar con esta guía, aprende a combinar
@@ -102,7 +69,7 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Decoración de interiores</h4>
                         <p class="informacion-meta">Escrito el: <span>30/10/2025</span> por: <span>admin</span></p>
                         <p>Consejos para dar un toque personal a tu espacio con materiales de primera calidad y más
@@ -116,10 +83,10 @@
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.php">Nosotros</a>
+                <a href="anuncios.php">Anuncios</a>
+                <a href="blog.php">Blog</a>
+                <a href="contacto.php">Contacto</a>
             </nav>
         </div>
         <p class="copyright">Iván Roldán Mora. Diseñador Web &copy;</p>
