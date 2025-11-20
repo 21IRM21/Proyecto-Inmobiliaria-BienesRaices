@@ -200,4 +200,4 @@
 </div><!--final contenedor-seccion-->
 
 
-<?php @include 'includes/templates/footer.php' ?>
+<?php incluirTemplate('footer') ?>

@@ -83,4 +83,4 @@
         </section>
 
     </main>
-    <?php @include 'includes/templates/footer.php' ?>
+    <?php incluirTemplate('footer') ?>
