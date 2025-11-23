@@ -14,7 +14,7 @@ function conectarDB() {
     }
 
     // Opcional: quitar el echo cuando ya esté en producción
-     echo "Conexión exitosa";
+    //echo "Conexión exitosa";
 
     return $db;
 }

@@ -1,0 +1,11 @@
+.prueba{
+    text-align: center;
+    text-transform: uppercase;
+    padding: .5rem;
+    margin: .5rem 0;
+
+    &.error{
+        color: white;
+        background-color:$rojo;
+    }
+}
