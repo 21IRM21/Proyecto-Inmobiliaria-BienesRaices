@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //Asignar files hacia una variable
     $imagen = $_FILES["imagen"];
 
-    var_dump($imagen);
+    //var_dump($imagen);
     //exit;
 
 
@@ -81,19 +81,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Solo se ejecuta el query si el array de errores está vacío
 
-      if (empty($errores)) {
+    if (empty($errores)) {
 
-          /**SUBIDA DE ARCHIVOS*/
-          //Crear carpeta
-          $carpetaImagenes = '../../imagenes/';
-          if(!is_dir($carpetaImagenes)){
+        /**SUBIDA DE ARCHIVOS*/
+        //Crear carpeta
+        $carpetaImagenes = '../../imagenes/';
+        if (!is_dir($carpetaImagenes)) {
             mkdir($carpetaImagenes);
-          }
-          //Generar nombre único
-            $nombreImagen= md5(uniqid(rand(), true)).".jpg";
-          //Subir la imagen
-          move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
-         
+        }
+        //Generar nombre único
+        $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+        //Subir la imagen
+        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+
 
         $query = "INSERT INTO propiedades 
             (titulo, precio, imagen, descripcion, habitaciones, wc, aparcamiento, creado, vendedor_id)
@@ -104,7 +104,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($resultado) {
             //Redireccionar al usuario
-            header('Location: /admin');
+            header('Location: /admin?resultado=1'); //Con resultado 1 indicamos que la propiedad se registró correctamente y
+                                                            //lo pasamos a la url mediante GET.
         }
     }
 }
@@ -167,10 +168,10 @@ incluirTemplate('header');
             <select id="vendedor" name="vendedor" placeholder="--Seleccione--">
                 <option value="" disabled selected>--Seleccione--</option>
                 <?php while ($row = mysqli_fetch_assoc($resultado)) : ?>
-                    <option <?php echo $vendedorId == $row['id'] ? 'selected' : ''; ?> value="<?php echo $row['id']; ?>">                        
+                    <option <?php echo $vendedorId == $row['id'] ? 'selected' : ''; ?> value="<?php echo $row['id']; ?>">
                         <?php echo $row['nombre'] . " " . $row['apellidos']; ?>
-                    </option>                                            
-                    
+                    </option>
+
                 <?php endwhile; ?>
             </select>
         </fieldset>
