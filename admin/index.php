@@ -27,7 +27,9 @@ echo "</pre>";*/
     <!-- En el caso de que la validación del formulario haya sido correcta y resultado 
      sea igual a 1: -->
     <?php if (intval($mensaje) === 1): ?>
-        <p class="prueba exito">Propiedad creada correctamente</p>
+            <p class="prueba exito">Propiedad Creada Correctamente</p>
+        <?php elseif (intval($mensaje) === 2): ?>
+            <p class="prueba exito">Propiedad Actualizada Correctamente</p>
     <?php endif; ?>
 
     <a href="/admin/propiedades/crear.php" class="boton boton-verde">Crear</a>
@@ -50,7 +52,7 @@ echo "</pre>";*/
                     <td><img src="/imagenes/<?php echo $propiedad['imagen']; ?>" alt="imagen de la casa" class="imagen-tabla"></td>
                     <td><?php echo $propiedad['precio'] . " €"; ?></td>
                     <td>
-                        <a href="#" class="boton-amarillo-block"> Actualizar</a>
+                        <a href="/admin/propiedades/actualizar.php?id=<?php echo $propiedad['id']; ?>" class="boton-amarillo-block"> Actualizar</a>
                         <a href="#" class="boton-rojo-block"> Eliminar</a>
 
                     </td>
@@ -64,7 +66,7 @@ echo "</pre>";*/
 
 <?php
 //Cerrar la conexion
-mysqli_close($cb);
+mysqli_close($db);
 
 incluirTemplate('footer')
 ?>
