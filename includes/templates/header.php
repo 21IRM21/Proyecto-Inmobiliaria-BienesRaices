@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/build/css/app.css">
+    <link rel="stylesheet" href="build/css/app.css">
     <title>Bienes Raices</title>
 </head>
 
-<body>
+
     <header class="header <?php echo $inicio ? 'inicio': '' ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img src="/build/img/logo.svg" alt="Logotipo Bienes Raices">
+                    <img src="build/img/logo.svg" alt="Logotipo Bienes Raices">
                 </a>
 
                 <div class="mobile-menu">
@@ -30,5 +30,10 @@
                     </nav>
                 </div>
             </div> <!--cierre de la barra-->
+            <?php
+            if($inicio){
+                echo "<h1>Venta de Casas y Apartamentos Exclusivos de Lujo</h1>";
+            }
+            ?>
         </div>
     </header>

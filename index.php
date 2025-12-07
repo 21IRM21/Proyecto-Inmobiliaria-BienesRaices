@@ -1,6 +1,6 @@
 <?php
-    require 'includes/funciones.php';
-    incluirTemplate('header', $inicio = true);
+require 'includes/funciones.php';
+incluirTemplate('header', $inicio = true);
 ?>
 
 <main class="contenedor seccion">
@@ -35,102 +35,10 @@
 
     <h1>Casas y Apartamentos en Venta</h1>
 
-    <section class="contenedor-anuncios">
-
-        <div class="anuncio">
-            <picture>
-                <source srcset="build/img/anuncio1.webp" type="img.webp">
-                <source srcset="build/img/anuncio1.jpg" type="img.jpg">
-                <img src="build/img/anuncio1.jpg" alt="imagen anuncio" loading="lazy">
-            </picture>
-
-            <div class="contenido-anuncio">
-                <h3>Casa de Lujo en el Lago</h3>
-                <p>Casa en el lago con excelentes vistas, acabados de lujo con increible precio</p>
-                <p class="precio">3.000.000 €</p>
-
-                <ul class="iconos-caracteristicas">
-                    <li>
-                        <img class="icono" src="build/img/icono_wc.svg" alt="Icono wc" loading="lazy">
-                        <p>3</p>
-                    </li>
-                    <li>
-                        <img class="icono" src="build/img/icono_estacionamiento.svg" alt="Icono estacionamiento" loading="lazy">
-                        <p>3</p>
-                    </li>
-                    <li>
-                        <img class="icono" src="build/img/icono_dormitorio.svg" alt="Icono dormitorio" loading="lazy">
-                        <p>4</p>
-                    </li>
-                </ul>
-
-                <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedad</a>
-            </div><!--final contenido anuncio-->
-        </div><!--final anuncio-->
-
-        <div class="anuncio">
-            <picture>
-                <source srcset="build/img/anuncio2.webp" type="img.webp">
-                <source srcset="build/img/anuncio2.jpg" type="img.jpeg">
-                <img src="build/img/anuncio2.jpg" alt="imagen anuncio" loading="lazy">
-            </picture>
-
-            <div class="contenido-anuncio">
-                <h3>Casa Terminados de Lujo</h3>
-                <p>Casa con diseño moderno, así como tecnología inteligente y amueblada</p>
-                <p class="precio">2.000.000 €</p>
-
-                <ul class="iconos-caracteristicas">
-                    <li>
-                        <img class="icono" src="build/img/icono_wc.svg" alt="Icono wc" loading="lazy">
-                        <p>3</p>
-                    </li>
-                    <li>
-                        <img class="icono" src="build/img/icono_estacionamiento.svg" alt="Icono estacionamiento" loading="lazy">
-                        <p>3</p>
-                    </li>
-                    <li>
-                        <img class="icono" src="build/img/icono_dormitorio.svg" alt="Icono dormitorio" loading="lazy">
-                        <p>4</p>
-                    </li>
-                </ul>
-
-                <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedad</a>
-            </div><!--final contenido anuncio-->
-        </div><!--final anuncio-->
-
-        <div class="anuncio">
-            <picture>
-                <source srcset="build/img/anuncio3.webp" type="img.webp">
-                <source srcset="build/img/anuncio3.jpg" type="img.jpg">
-                <img src="build/img/anuncio3.jpg" alt="imagen anuncio" loading="lazy">
-            </picture>
-
-            <div class="contenido-anuncio">
-                <h3>Casa con piscina</h3>
-                <p>Casa con piscina y acabados de lujo en la ciudad, excelente oportunidad</p>
-                <p class="precio">3.000.000 €</p>
-
-                <ul class="iconos-caracteristicas">
-                    <li>
-                        <img class="icono" src="build/img/icono_wc.svg" alt="Icono wc" loading="lazy">
-                        <p>3</p>
-                    </li>
-                    <li>
-                        <img class="icono" src="build/img/icono_estacionamiento.svg" alt="Icono estacionamiento" loading="lazy">
-                        <p>3</p>
-                    </li>
-                    <li>
-                        <img class="icono" src="build/img/icono_dormitorio.svg" alt="Icono dormitorio" loading="lazy">
-                        <p>4</p>
-                    </li>
-                </ul>
-
-                <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedad</a>
-            </div><!--final contenido anuncio-->
-        </div><!--final anuncio-->
-
-    </section><!--final contenedor-anuncios-->
+    <?php
+    $limite = 3;
+    include 'includes/templates/anuncios.php';
+    ?>
 
     <div class="alinear-derecha">
         <a href="anuncios.php" class="boton-verde">Ver Todas</a>
@@ -200,4 +108,6 @@
 </div><!--final contenedor-seccion-->
 
 
-<?php incluirTemplate('footer') ?>
+<?php 
+incluirTemplate('footer');
+?>
