@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="/build/css/app.css">
     <title>Bienes Raices</title>
 </head>
-
 
     <header class="header <?php echo $inicio ? 'inicio': '' ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img src="build/img/logo.svg" alt="Logotipo Bienes Raices">
+                    <img src="/build/img/logo.svg" alt="Logotipo Bienes Raices">
                 </a>
 
                 <div class="mobile-menu">
