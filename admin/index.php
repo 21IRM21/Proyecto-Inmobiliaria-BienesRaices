@@ -1,4 +1,13 @@
 <?php
+// Importar las funciones
+require '../includes/funciones.php';
+
+// Validar la sesión antes de permitir el acceso a la página. Viene de login.php
+$auth = estaAutenticado();
+
+if (!$auth) {
+    header('Location: /');
+}
 
 // Importar la conexion
 require '../includes/config/database.php';
@@ -32,8 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Importar las funciones
-require '../includes/funciones.php';
 incluirTemplate('header');
 ?>
 <?php
@@ -57,7 +64,7 @@ echo "</pre>";*/
         <p class="prueba error">¡¡¡Propiedad Eliminada Correctamente!!!</p>
     <?php endif; ?>
 
-    <a href="/admin/propiedades/crear.php" class="boton boton-verde">Crear</a>
+    <a href="/admin/propiedades/crear.php" class="boton boton-verde">Nueva Propiedad</a>
 
     <table class="propiedades">
         <thead>
@@ -75,15 +82,12 @@ echo "</pre>";*/
                     <td><?php echo $propiedad['id']; ?></td>
                     <td><?php echo $propiedad['titulo']; ?></td>
                     <td><img src="/imagenes/<?php echo $propiedad['imagen']; ?>" alt="imagen de la casa" class="imagen-tabla"></td>
-                    <td><?php echo $propiedad['precio'] . " €"; ?></td>
-                    <td>
+                    <td><?php echo number_format($propiedad['precio'], 0, ',', '.') . " €"; ?></td>                    <td>
                         <a href="/admin/propiedades/actualizar.php?id=<?php echo $propiedad['id']; ?>" class="boton-amarillo-block"> Actualizar</a>
                         <form method="POST" class="w-100">
                             <input type="hidden" name="id" value="<?php echo $propiedad['id'] ?>">
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
-
-
                     </td>
                 </tr>
             <?php endwhile; ?>

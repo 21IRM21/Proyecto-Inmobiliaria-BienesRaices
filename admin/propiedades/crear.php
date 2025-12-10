@@ -1,4 +1,13 @@
 <?php
+// Importar las funciones
+require '../../includes/funciones.php';
+
+// Validar la sesión antes de permitir el acceso a la página. Viene de login.php
+$auth = estaAutenticado();
+
+if (!$auth) {
+    header('Location: /');
+}
 
 // Importar la conexión
 require '../../includes/config/database.php';
@@ -115,13 +124,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       var_dump($_SERVER);
    echo "</pre>";*/
 
-require '../../includes/funciones.php';
 incluirTemplate('header');
 ?>
 
 <main class="contenedor seccion">
-    <h1>Crear</h1>
-    <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+    <h1>Crear Propiedades</h1>
+    <a href="/admin/index.php" class="boton boton-verde">Ver Propiedades</a>
 
     <?php foreach ($errores as $error) : ?>
         <div class="prueba error">

@@ -1,0 +1,1 @@
+//ctrl+K ctrl+c para comentar varias lineas, ctrl+k ctrl+u descomentar

@@ -35,7 +35,7 @@
        
 
         <div class="resumen-propiedad">
-            <p class="precio"><?php echo $propiedades['precio'] ?> €</p>
+            <p class="precio"><?php echo number_format($propiedades['precio'], 0, ',', '.') . " €"; ?></p>
             <ul class="iconos-caracteristicas">
                 <li>
                     <img class="icono" src="build/img/icono_wc.svg" alt="Icono wc" loading="lazy">

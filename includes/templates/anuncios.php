@@ -21,7 +21,7 @@ $resultado = mysqli_query($db,$query);
                 <h3><?php echo $propiedades['titulo'] ?></h3>
                 <p><?php echo substr($propiedades['descripcion'], 0, 60) . '...'; ?></p>
 
-                <p class="precio"><?php echo $propiedades['precio'] ?> €</p>
+                <p class="precio"><?php echo number_format($propiedades['precio'], 0, ',', '.') . " €"; ?></p>
 
                 <ul class="iconos-caracteristicas">
                     <li>
