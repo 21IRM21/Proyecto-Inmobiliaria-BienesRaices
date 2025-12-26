@@ -2,8 +2,8 @@
 
 //OJO CON ESTE ARCHIVO, DEBERÍA ELIMINARSE DESPUES DE CREAR AL USUARIO ADMINISTRADOR
 
-// Importar la base de datos
-require 'includes/config/database.php';
+ require 'includes/app.php';
+// Conestar a la base de datos
 $db = conectarDB();
 
 // Crear un usuario y una contraseña

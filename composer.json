@@ -1,0 +1,17 @@
+{
+    "name": "maryj/proyectobienes-raices",
+    "description": "Practicando Namespaces",
+    "authors": [
+        {
+            "name": "Ivan",
+            "email": "correo@correo.es"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "App\\": "./classes"
+        }
+    }
+
+}

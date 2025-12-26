@@ -1,10 +1,9 @@
 <?php
-    require 'includes/funciones.php';
+    require 'includes/app.php';
     incluirTemplate('header');
 ?>
  <?php
-    // Importar la conexion de la base de datos
-    include 'includes/config/database.php';
+  
     $db = conectarDB();
 
     // Obtener el id
