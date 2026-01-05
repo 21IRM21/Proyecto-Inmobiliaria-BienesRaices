@@ -1,1 +1,2 @@
-//ctrl+K ctrl+c para comentar varias lineas, ctrl+k ctrl+u descomentar
+ctrl+K ctrl+c ----> para comentar varias lineas, ctrl+k ctrl+u descomentar.
+ctrl+f -------> Poner formato de código con los espacios más estéticos.
