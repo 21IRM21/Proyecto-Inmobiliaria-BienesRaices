@@ -4,6 +4,8 @@
 require '../../includes/app.php';
 
 use App\Propiedad;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager as Image;
 
 // $propiedad = new Propiedad;
 // debuguear($propiedad);
@@ -36,43 +38,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
      //Crear una nueva instancia de propiedad
         $propiedad = new Propiedad($_POST);
+
+        //Generar nombre único
+        $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+        if($_FILES ['imagen']['tmp_name']){
+            $manager = new Image(Driver::class);
+            $image = $manager->read($_FILES ['imagen']['tmp_name'])->cover(800,600);
+            //debuguear($image);
+            $propiedad->setImagen($nombreImagen);
+        }
+
         $errores = $propiedad->validar(); 
 
 
     // Solo se ejecuta el query si el array de errores está vacío
-    if (empty($errores)) {         
+    if (empty($errores)) {                        
 
-        $propiedad->guardar();
-        //debuguear($propiedad);
+        /**SUBIDA DE ARCHIVOS*/    
 
-        //Asignar files hacia una variable
-        $imagen = $_FILES["imagen"];
-
-        /**SUBIDA DE ARCHIVOS*/
-        //Crear carpeta
-        $carpetaImagenes = '../../imagenes/';
-        if (!is_dir($carpetaImagenes)) {
-            mkdir($carpetaImagenes);
+        if (!is_dir(CARPETA_IMAGENES)) {
+            mkdir(CARPETA_IMAGENES);
         }
+
+        //Guarda la imagen en el servidor
+        $image->save(CARPETA_IMAGENES . $nombreImagen);
         
         //Generar nombre único
         $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-        //Subir la imagen
-        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
-
-
+        
+        $resultado = $propiedad->guardar();
+        //debuguear($propiedad);
         if ($resultado) {
             //Redireccionar al usuario
             header('Location: /admin?resultado=1'); //Con resultado 1 indicamos que la propiedad se registró correctamente y
             //lo pasamos a la url mediante GET.
+            exit;
         }
     }
 }
 
-/*INFORMACIÓN DEL SERVIDOR
-   echo "<pre>";
-      var_dump($_SERVER);
-   echo "</pre>";*/
 
 incluirTemplate('header');
 ?>

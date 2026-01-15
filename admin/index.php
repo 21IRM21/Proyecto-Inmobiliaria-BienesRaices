@@ -1,23 +1,14 @@
 <?php
 // Importar las funciones
-require '../includes/funciones.php';
+require '../includes/app.php';
+USE App\Propiedad;
 
 // Validar la sesión antes de permitir el acceso a la página. Viene de login.php
-$auth = estaAutenticado();
+estaAutenticado();
 
-if (!$auth) {
-    header('Location: /');
-}
-
-// Importar la conexion
-require '../includes/config/database.php';
-$db = conectarDB();
-
-// Realizar la consulta
-$query = "SELECT * FROM propiedades";
-
-// Consultar la base de datos
-$resultadoConsulta = mysqli_query($db, $query);
+//Implementar un método para obtener todas las propiedades
+$propiedades = propiedad::all();
+debuguear($propiedades);
 
 //Eliminar un registro de propiedades
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -36,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "DELETE FROM propiedades WHERE id = {$id}";
         $resultado = mysqli_query($db, $query);
         if ($resultado) {
-            header('location: /admin?resultado=3;');
+            header('location: /admin?resultado=3');
         }
     }
 }

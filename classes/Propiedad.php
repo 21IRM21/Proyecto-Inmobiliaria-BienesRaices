@@ -37,7 +37,7 @@ class Propiedad
     {
         $this->titulo = $args['titulo'] ?? '';
         $this->precio = $args['precio'] ?? '';
-        $this->imagen = $args['imagen'] ?? 'imagen.jpg';
+        $this->imagen = $args['imagen'] ?? '';
         $this->descripcion = $args['descripcion'] ?? '';
         $this->habitaciones = $args['habitaciones'] ?? '';
         $this->wc = $args['wc'] ?? '';
@@ -71,8 +71,8 @@ class Propiedad
         $query .= join("','", array_values($atributos));
         $query .= "')";
         //debuguear($query);
-
         $resultado = self::$db->query($query);
+        return $resultado;
         //debuguear($resultado);   
     }
     //Identificar y unir los atributos de la BD
@@ -88,7 +88,6 @@ class Propiedad
     //Sanitizar los atributos
     public function sanitizarAtributos()
     {
-
         $atributos = $this->atributos();
         $sanitizados = [];
         foreach ($atributos as $key => $value) {
@@ -123,16 +122,55 @@ class Propiedad
         if (!$this->vendedor_id) {
             self::$errores[] = "Debes añadir un vendedor";
         }
-        // if (!$this->imagen['name'] || $this->imagen['error']) {
-        //     self::$errores[] = "Debes añadir una imagen";
-        // }
-        // //Validación de imagen subida (1mb)
-        // $medida = 1000 * 1000;
-        // if ($this->imagen['size'] > $medida) {
-        //     self::$errores[] = "La imagen tiene un tamaño demasiado grande";
-        // }
+        if (!$this->imagen) {
+            self::$errores[] = "Debes añadir una imagen";
+        }
         
         return self::$errores;
+    }
+    public function setImagen($imagen)
+    {
+        //Asignar el atributo de imagen al nombre de la imagen
+        if($imagen){
+            $this->imagen = $imagen;
+        }
+    }
+    public static function all(){
+        $query = "SELECT * FROM propiedades";
+
+        $resultado = self::consultarSQL($query);
+        //debuguear($resultado->fetch_assoc());
+        return $resultado;
+    }
+    public static function consultarSQL($query){
+        //Consultar la base de datos
+        $resultado= self::$db->query($query);
+
+        //Iterar los resultados
+        $array = [];
+        while($registro = $resultado->fetch_assoc()){
+            $array[] = self::crearObjeto($registro);            
+        }
+        //debuguear($array);
+
+        //Liberar memoria
+        $resultado ->free();
+
+        //Retornar los resultados
+        return $array;
+    }
+
+    protected static function crearObjeto($registro){
+        $objeto = new self;
+        //debuguear($objeto);
+
+        foreach ($registro as $key => $value) {
+            if(property_exists($objeto, $key)){
+                $objeto->$key = $value;
+            } 
+            //debuguear($objeto);          
+        }
+        return $objeto;
     }
 }
 

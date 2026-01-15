@@ -4,11 +4,11 @@
 require '../../includes/funciones.php';
 
 // Validar la sesión antes de permitir el acceso a la página. Viene de login.php
-$auth = estaAutenticado();
+estaAutenticado();
 
-if (!$auth) {
-    header('Location: /');
-}
+// if (!$auth) {
+//     header('Location: /');
+// }
 
 // Validar la URL con un id válido
 $id = $_GET['id'] ?? null;
